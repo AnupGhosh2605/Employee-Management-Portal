@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% load static %}
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+</head>
+
+<body style="background-color:  #f2f2f2;">
+    <h2 class="blue-text tm-title text-xs-center" style="text-align: center;">Dashboard</h2>
+    <div class="tm-container">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <form action="{% url 'updashboard' %}" method="post" class="tm-contact-form" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Name :</label><br><br>
+                    <input type="text" style="width: 50%;" id="name" name="name" class="form-control" value="{{name}}" placeholder="Name" />
+                </div>
+                <div class="form-group">
+                    <label>Project in which you are currently working :</label><br><br>
+                    <input type="text" style="width: 50%;" id="projectName" name="projectName" class="form-control" value="{{projectName}}" placeholder="Project Name" />
+                </div>
+                <div class="form-group">
+                    <label>Progress in your project (%) :</label><br><br>
+                    <input type="text" style="width: 50%;" id="projectPercenatge" name="projectPercenatge" class="form-control" value="{{projectPercenatge}}" placeholder="Enter The Percentage" />
+                </div>
+                <!-- <div class="form-group ">
+                    <label>Upload your CV :</label> <a href="{{url}}" download>{{upload}}</a><br><br>
+                    <input type="file" style="width: 50%;" id="myfile" name="cv" class="form-control" />
+                </div> -->
+
+
+                <button type="submit" class="btn tm-light-blue-bordered-btn pull-xs-left">update</button>
+            </form>
+            <br>
+            <div>
+                <a href="{% url 'intro' %}" class="btn tm-light-blue-bordered-btn pull-xs-left">Exit</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

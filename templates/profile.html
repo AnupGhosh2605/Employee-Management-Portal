@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+        
+        .title {
+            color: grey;
+            font-size: 18px;
+        }
+        
+        button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+        
+        a {
+            text-decoration: none;
+            font-size: 22px;
+            color: black;
+        }
+        
+        button:hover,
+        a:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h2 style="text-align:center ; color:rgb(185, 27, 27) "> Profile Card</h2>
+
+    <div class="card " style="box-shadow: 0 4px 8px 0 rgba(185, 18, 18, 0.2); max-width: 700px; margin:auto; text-align: left; font-family: arial; ">
+        <!-- <img src="{% static 'img/Avanger.jpg' %} " alt="John " style="width:100% "> -->
+        <strong>
+        <div style="padding-left: 2rem; padding-top:1rem ">
+        <a>Name          :{{name}}</a><br>  
+        <a>Email Id      :{{email}}</a><br>
+        <a>Phone Number  :{{phone}}</a><br>
+        
+    </div>
+    </strong>
+        <p style="text-align: center; font-family:Georgia, 'Times New Roman', Times, serif; padding-top:4rem; color:black " class="title "></p>
+        <br>
+        <div>
+            <a href="{% url 'updashboard' %}" class="tm-intro-link" style="background-color: rgb(107, 107, 167);">Exit</a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
